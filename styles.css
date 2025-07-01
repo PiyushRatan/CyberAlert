@@ -1,0 +1,117 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+.navbar{
+    display:flex;
+    height: 10vh;
+    width:auto;
+    padding:2vh;
+    border-bottom:2px solid #C0C0C0;
+    justify-content: space-between;
+}
+.navbar_elements{
+    
+}
+#logo_text{
+display:grid;
+width:auto;
+height: max-content;
+font-size: 26px;
+}
+#button{
+    display:grid;
+    width:6rem;
+    height:2.6rem;
+    margin-right: 20px;
+    background-color:#C0C0C0;
+    border:3px solid #C0C0C0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#button_dot{
+    width:2.6rem;
+    height:2.6rem;
+    background-color: black;
+    border-radius: 50%;
+}
+#button_dot:hover{
+    display:grid;
+    width:2.6rem;
+    height:2.6rem;
+    background-color: rgb(231, 36, 36);
+    border-radius: 50%;
+    transform: translateX(3.34rem);
+    transition: 1.2s ease-in-out;
+}
+.container{
+    margin:30px;
+    text-align: center;
+    justify-items: center;
+}
+#cont_heading{
+    font-size: 50px;
+    
+}
+/* Add padding-top to .textarea for vertical alignment */
+.textarea {
+    display: inline-flex;
+    height: 29vh;
+    width:80vw;
+    background-color:white;
+    border: 2px solid #C0C0C0;
+    border-radius: 12px;
+    margin-top:20px;
+    padding-left: 20px;
+    font-size:20px;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+.textarea::placeholder{
+    text-align: left;
+    color: #C0C0C0;
+}
+#submit_button {
+    display: inline-flex;
+    height: 8vh;
+    width:80vw;
+    background-color:rgb(62, 98, 255);
+    border: 2px solid #C0C0C0;
+    border-radius: 12px;
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
+    font-size:24px;
+}
+a{
+    padding-top:8px;
+    text-decoration: none;
+    color:white;
+}
+
+.response {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 18vh;
+    width:80vw;
+    background-color:white;
+    border: 2px solid #C0C0C0;
+    border-radius: 12px;
+    margin-top:20px;
+    padding-left: 20px;
+    font-size:20px;
+}
+.response h1{
+    margin-left:-102px;
+    font-size: 40px;
+}
+.response h2{
+    font-size: 26px;
+    margin-left:34px;
+    margin-right:20px;
+}
+footer{
+    text-align: center;
+}
