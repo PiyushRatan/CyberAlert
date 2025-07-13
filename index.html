@@ -1,25 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Cyber Alert!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <title>Cyber Alert!</title>
 </head>
 <body>
-    <nav class="navbar">
-      <div class="navbar_elements" id = "logo_text">
-          <h1>Cyber Alert!</h1>
-      </div>
-      <div class="navbar_elements" id="button"><div id="button_dot"></div></div>
-    </nav>
-    <section class="container">
-        <h1 id="cont_heading">Check if a message is a scam</h1>
-        <input type="text" class="textarea" placeholder="Enter Or Paste Your Message Here">
-       <a href="https://www.google.com"> <div id="submit_button" ><h2 >Check Message</h2></div></a>
-        <div class="response"><h1>Likely Safe</h1>
-        <h2>This message doesn't appear to be a scam.</h2></div>
-    </section>
-    <footer class="footer">Made With 😎 By Piyush Ratan</footer>
+  <nav class="navbar">
+    <div class="navbar_elements" id="logo_text">
+      <h1>Cyber Alert!</h1>
+    </div>
+    <div class="navbar_elements" id="button">
+      <div id="button_dot"></div>
+    </div>
+  </nav>
+
+  <section class="container">
+    <h1 id="cont_heading">Check if a message is a scam</h1>
+
+    <!-- 📝 Input field -->
+    <input type="text" id="scamInput" class="textarea" placeholder="Enter Or Paste Your Message Here" />
+
+    <!-- 🖱️ Button to trigger fetch -->
+    <div id="submit_button" onclick="sendToBackend()">
+      <h2>Check Message</h2>
+    </div>
+
+    <!-- 💬 Response area -->
+    <div class="response" id="responseBox" style="display: none;">
+      <h1 id="responseLabel">Likely Safe</h1>
+      <h2 id="responseText">This message doesn't appear to be a scam.</h2>
+    </div>
+  </section>
+
+  <footer class="footer">Made With 😎 By Piyush Ratan</footer>
+
+  <!-- 🔌 JavaScript to connect to Flask backend -->
+  <script>
+    async function sendToBackend() {
+      const userInput = document.getElementById("scamInput").value.trim();
+      const responseLabel = document.getElementById("responseLabel");
+      const responseText = document.getElementById("responseText");
+      const responseBox = document.getElementById("responseBox");
+
+      if (!userInput) {
+        responseLabel.textContent = "⚠️ Empty Input";
+        responseText.textContent = "Please enter a message to check.";
+        responseBox.style.display = "block";
+        return;
+      }
+
+      responseLabel.textContent = "⏳ Checking...";
+      responseText.textContent = "Please wait while we analyze the message.";
+      responseBox.style.display = "block";
+
+      try {
+        const res = await fetch("https://flask-backend-t3sb.onrender.com/ask", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ question: userInput })
+        });
+
+        const data = await res.json();
+        if (data.answer) {
+          responseLabel.textContent = "✅ Result";
+          responseText.textContent = data.answer;
+        } else {
+          responseLabel.textContent = "❌ Error";
+          responseText.textContent = "Could not get a valid response.";
+        }
+      } catch (err) {
+        responseLabel.textContent = "🚨 Server Error";
+        responseText.textContent = "The backend could not be reached.";
+      }
+    }
+  </script>
 </body>
 </html>
