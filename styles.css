@@ -122,6 +122,7 @@
  background-color: var(--button-bg);
     color: var(--button-text);
     border: none;
+    display:flex;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
