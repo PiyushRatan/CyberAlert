@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const submitBtn = document.getElementById("submitBtn");
     const inputText = document.getElementById("inputText");
@@ -7,9 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Required elements not found in the DOM.");
         return;
     }
-
+    
     submitBtn.addEventListener("click", function () {
         const input = inputText.value.trim();
+        let language = document.getElementById("language-selector").value;
+        console.log(language);
         document.getElementById("alert").hidden = true;
         document.getElementById("promise").hidden = true;
         if (!input) {
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const timerSpan = document.getElementById("timer");
             if (timerSpan) timerSpan.textContent = seconds;
         }, 1000);
-        sendToBackend(input, resultBox, timerInterval);
+        sendToBackend(input, resultBox, timerInterval,language);
     });
 
     // Allow pressing Enter in the input field to trigger the backend call
@@ -41,14 +44,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-async function sendToBackend(input, resultBox, timerInterval) {
+async function sendToBackend(input, resultBox, timerInterval, language) {
     try {
         const res = await fetch("https://flask-backend-t3sb.onrender.com/ask", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ question: input })
+            body: JSON.stringify({ question: input , language:language})
         });
         if (!res.ok) {
             throw new Error(`Server responded with status ${res.status}`);

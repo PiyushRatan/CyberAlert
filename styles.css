@@ -16,7 +16,7 @@
   --input-placeholder: #666;
   --button-hover: #3399ff;
   --shadow: rgba(0, 123, 255, 0.5);
-  --card-shadow: 0 0 10px var(--shadow);
+  --card-shadow: 0 0 90px var(--shadow);
 }
 
 * {
@@ -199,6 +199,21 @@ body {
   text-align: center;
 }
 
+.language-selector-container{
+  height: fit-content;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  background-color:var(--accent);
+ border-radius: 0;
+ border-color: var(--safe);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+
+}
+#language-selector{
+  background-color: #00d4ff;
+  color:var(--input-text);
+}
 /* Input Area */
 .text-input {
   width: min(90vw, 800px);
