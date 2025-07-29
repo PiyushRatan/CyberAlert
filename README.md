@@ -1,59 +1,66 @@
-⚡ CyberAlert
-CyberAlert is a beginner-friendly tool that detects scam messages using AI. Built with a modern UI and real-time backend analysis.
+# ⚡ CyberAlert
 
-🔐 Key Features
-AI-powered scam detection (Gemini API)
+**CyberAlert** is an AI-powered scam message detector with a modern UI and real-time Flask backend.
 
-Flask backend with JS-powered frontend
+---
 
-Color-coded severity feedback
+## 🔐 Features
 
-Clean, responsive UI (mobile + desktop)
+- 🤖 AI scam detection (Gemini API)
+- 🧠 Flask backend + JS frontend
+- 🎨 Color-coded severity (Low / Moderate / High / Critical)
+- 📱 Responsive design for all devices
+- 📄 Includes About & Contact pages
 
-About & Contact pages included
+---
 
-🚀 How to Use
-Open index.html in your browser
+## 🚀 How to Use
 
-Enter a message and click Check
+1. Open `index.html`
+2. Enter a message → Click **Check**
+3. Get:
+   - AI response
+   - Severity level
+   - Recommended action
 
-Get:
+---
 
-AI response
+## 🧰 Tech Stack
 
-Scam severity (color-coded)
+- **Frontend:** HTML5, CSS3 (Flex/Grid), JavaScript (Fetch API)
+- **Backend:** Python Flask (hosted)
+- **AI API:** Google Gemini
 
-Recommended action
+---
 
-Navigate to About and Contact via navbar
+## 📁 Project Structure
 
-🧰 Tech Stack
-HTML5, CSS3 (flex/grid, gradients)
+```plaintext
+├── index.html      # Scam checker UI
+├── about.html      # Project info
+├── contact.html    # Author details
+├── styles.css      # Styles and layout
+└── script.js       # JS logic + backend calls
+````
 
-JavaScript (fetch, async/await)
+---
 
-Python Flask backend (hosted)
+## 📌 Roadmap
 
-Google Gemini API
+* [x] Responsive UI
+* [x] AI-powered scam detection
+* [x] Flask–JS integration
+* [x] About & Contact pages
+* [ ] Light/Dark mode
+* [ ] User login system
+* [ ] Custom ML model integration
+* [ ] Real-time threat reporting
+* [ ] Browser extension support
 
-📁 Structure
-index.html – Scam checker UI
+---
 
-about.html – Project info
+## 👨‍💻 Author
 
-contact.html – Author details
+Made with ❤️ and curiosity by [@PiyushRatan](https://github.com/PiyushRatan)
 
-styles.css – All styles
-
-script.js – Logic & backend link
-
-📌 Roadmap
-[X] Responsive UI
-[X] AI scam detection
-[X] Flask–JS integration
-[X] About & Contact pages
-[🔜] Add ML models
-[🔜] User login system
-[🔜] Light/Dark mode
-
-🚧 Built with love and curiosity by PiyushRatan
+```
