@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     submitBtn.addEventListener("click", function () {
         const input = inputText.value.trim();
+        document.getElementById("alert").hidden = true;
+        document.getElementById("promise").hidden = true;
         if (!input) {
             resultBox.innerHTML = "<p>Please enter a message to analyze.</p>";
             return;
