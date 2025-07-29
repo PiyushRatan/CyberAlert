@@ -85,25 +85,33 @@ if (!document.getElementById('loader-style')) {
     const style = document.createElement('style');
     style.id = 'loader-style';
     style.textContent = `
-    .loader-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .loader {
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #3498db;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        animation: spin 1s linear infinite;
-        margin-bottom: 8px;
-    }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
+    
     `;
     document.head.appendChild(style);
 }
+// Add this JavaScript to handle the hamburger menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav-list');
+  
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navList.classList.toggle('active');
+    
+    // Update aria-expanded attribute for accessibility
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded);
+  });
+  
+  // Close menu when clicking on a nav link (optional)
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 768) {
+        hamburger.classList.remove('active');
+        navList.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+});

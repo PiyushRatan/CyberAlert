@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,38 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <nav class = "navbar">
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="logo.png" alt="CyberAlert Logo" class="navbar-logo" />
+      <span class="logo-title">CyberAlert</span>
+    </div>
+
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
     <ul class="nav-list">
       <li class="nav-item"><a href="#home" class="nav-link active">Check</a></li>
       <li class="nav-item"><a href="about.html" class="nav-link">Know more</a></li>
-      <li class="nav-item"><a href="contact.html" class="nav-link">About Me</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
     </ul>
   </nav>
-  
+
   <main class="content-section" id="home">
     <h1 class="section-title">Enter The Suspicious Text Below!</h1>
     <h2 class="">I promise a beast-tier browser extension of this if it gets in top 5.</h2>
     <textarea id="inputText" class="text-input" placeholder="Enter text here"></textarea>
     <button id="submitBtn" class="btn">Analyse</button>
-    
+
     <div id="responseBox">
     </div>
   </main>
-  
+
   <script src="script.js"></script>
 </body>
+
 </html>
