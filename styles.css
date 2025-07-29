@@ -1,15 +1,15 @@
 :root {
     --primary: #007BFF;
     --accent: #00d4ff;
-    --danger: #ff0033;
+    --danger: #ff0000;
     --background: #0d1117;
     --text: #dcdcdc;
     --card-bg: #121212;
     --border: #1f2a36;
 
     --safe: #07be69;
-    --warning: #d3aa07;
-    --critical: #d43006;
+    --warning: #ffcc00;
+    --critical: #f83d0e;
     
     --input-bg: #1a1f27;
     --input-text: #e0e0e0;
@@ -172,6 +172,12 @@ body {
 .severity-moderate {
     color: var(--warning);
     border-color: var(--warning);
+    background: rgba(255, 252, 69, 0.7);
+}
+
+.severity-medium {
+    color: var(--warning);
+    border-color: var(--warning);
     background: rgba(238, 234, 2, 0.08);
 }
 
@@ -184,7 +190,7 @@ body {
 .severity-critical {
     color: var(--danger);
     border-color: var(--danger);
-    background: rgba(255, 0, 0, 0.637);
+    background: rgba(149, 84, 255, 0.637);
 }
 
 .response-label {
