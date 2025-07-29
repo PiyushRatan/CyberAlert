@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cyber Alert</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar" id="navbar">
-    <ul>
-      <li><a href="#home">Check</a></li>
-      <li><a href="#knowmore">Know more</a></li>
-      <li><a href="#about">About Me</a></li>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="#home" class="nav-link active">Check</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">Know more</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">About Me</a></li>
     </ul>
   </nav>
-    <div class="home" id="home">
-      <div class="home-content">
-        <h1>Enter The Text Below!</h1>
-        <input type="text" id="inputText" class="inputText" placeholder="Enter text here">
-        <button id ="check" class="check" onclick="sendToBackend()">Check</button>
-        <div id="responseBox" class="responseBox">
-          <p id="responseLabel" class="responseLabel"></p>
-          <p id="responseText" class="responseText"></p>
-        </div>
-      </div>
+  
+  <main class="content-section" id="home">
+    <h1 class="section-title">Enter The Suspicious Text Below!</h1>
+    <textarea id="inputText" class="text-input" placeholder="Enter text here"></textarea>
+    <button id="submitBtn" class="btn">Check</button>
+    
+    <div id="responseBox">
     </div>
+  </main>
+  
+  <script src="script.js"></script>
 </body>
 </html>

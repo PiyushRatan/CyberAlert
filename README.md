@@ -1,16 +1,59 @@
-# CyberAlert
-A beginner-friendly yet ambitious cybersecurity tool that helps detect scam messages. Currently built with HTML, CSS, and Python. Planned upgrades include:
+⚡ CyberAlert
+CyberAlert is a beginner-friendly tool that detects scam messages using AI. Built with a modern UI and real-time backend analysis.
 
-- Flask backend for message processing 🔁
-- JavaScript for enhanced interactivity 💡
-- Machine Learning model for real-time scam detection 🧠
-- Clean UI/UX for mobile and desktop users 🌐
+🔐 Key Features
+AI-powered scam detection (Gemini API)
 
-This project is part of a Devpost Hackathon and grows as I learn — from frontend to full-stack, from static to smart.
-## 🔭 Roadmap (Learning-by-Building)
-- [x] Responsive HTML/CSS UI
-- [ ] Add Flask backend (Python)
-- [ ] Learn & integrate basic JavaScript (vanilla)
-- [ ] Build ML model (Naive Bayes / Logistic Regression)
-- [ ] Connect UI to backend
-- [ ] Deploy using Render / Vercel / Streamlit / Flask
+Flask backend with JS-powered frontend
+
+Color-coded severity feedback
+
+Clean, responsive UI (mobile + desktop)
+
+About & Contact pages included
+
+🚀 How to Use
+Open index.html in your browser
+
+Enter a message and click Check
+
+Get:
+
+AI response
+
+Scam severity (color-coded)
+
+Recommended action
+
+Navigate to About and Contact via navbar
+
+🧰 Tech Stack
+HTML5, CSS3 (flex/grid, gradients)
+
+JavaScript (fetch, async/await)
+
+Python Flask backend (hosted)
+
+Google Gemini API
+
+📁 Structure
+index.html – Scam checker UI
+
+about.html – Project info
+
+contact.html – Author details
+
+styles.css – All styles
+
+script.js – Logic & backend link
+
+📌 Roadmap
+[X] Responsive UI
+[X] AI scam detection
+[X] Flask–JS integration
+[X] About & Contact pages
+[🔜] Add ML models
+[🔜] User login system
+[🔜] Light/Dark mode
+
+🚧 Built with love and curiosity by PiyushRatan
