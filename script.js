@@ -75,6 +75,7 @@ async function sendToBackend(input, resultBox, timerInterval, language) {
         clearInterval(timerInterval);
         // Hide all alert
         const alerts = document.getElementsByClassName("alert");
+        document.getElementById("alert2").innerHTML = "Please have some patience my bro.<br>Its my first project 😅";
         for (let i = 0; i < alerts.length; i++) {
             alerts[i].hidden = true;
         }
