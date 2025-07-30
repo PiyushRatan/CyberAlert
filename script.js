@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const submitBtn = document.getElementById("submitBtn");
     const inputText = document.getElementById("inputText");
@@ -13,8 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const input = inputText.value.trim();
         let language = document.getElementById("language-selector").value;
         console.log(language);
-        document.getElementById("alert").hidden = true;
         document.getElementById("promise").hidden = true;
+        const alerts = document.getElementsByClassName("alert");
+        for (let i = 0; i < alerts.length; i++) {
+            alerts[i].hidden = true;
+        }
+        // Determine severity class for container
         if (!input) {
             resultBox.innerHTML = "<p>Please enter a message to analyze.</p>";
             return;
@@ -31,11 +33,21 @@ document.addEventListener("DOMContentLoaded", function() {
             seconds++;
             const timerSpan = document.getElementById("timer");
             if (timerSpan) timerSpan.textContent = seconds;
+            // Timer alert logic moved here and fixed
+            if (seconds === 7) {
+                document.getElementById("alert2").hidden = false;
+            } else if (seconds === 20) {
+                document.getElementById("alert2").hidden = true;
+                document.getElementById("alert3").hidden = false; // changed from alert3 to alertBoot
+            } else if(seconds === 30) {
+                document.getElementById("alert3").hidden = true;
+                document.getElementById("alert4").hidden = false;
+            }
         }, 1000);
         sendToBackend(input, resultBox, timerInterval,language);
     });
-
-    // Allow pressing Enter in the input field to trigger the backend call
+    // Removed broken timerInterval logic from here
+    // ...existing code...
     inputText.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -61,6 +73,11 @@ async function sendToBackend(input, resultBox, timerInterval, language) {
             throw new Error("Incomplete response from server.");
         }
         clearInterval(timerInterval);
+        // Hide all alert
+        const alerts = document.getElementsByClassName("alert");
+        for (let i = 0; i < alerts.length; i++) {
+            alerts[i].hidden = true;
+        }
         // Determine severity class for container
         let severityClass = '';
         if (data.severity) {
@@ -85,7 +102,7 @@ async function sendToBackend(input, resultBox, timerInterval, language) {
         resultBox.innerHTML = "<p>❌ Error occurred. Please try again later.</p>";
     }
 }
-// Loader CSS (inject if not present)
+// Loader CSS (Not needed i just used cs heheehe)
 if (!document.getElementById('loader-style')) {
     const style = document.createElement('style');
     style.id = 'loader-style';
