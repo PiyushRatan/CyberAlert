@@ -58,6 +58,8 @@
 * [ ] Browser extension support
 
 ---
+## 🔗 Live Deployment  
+Experience the project live: [https://cyberalert.rf.gd/](https://cyberalert.rf.gd/)
 
 ## 👨‍💻 Author
 
